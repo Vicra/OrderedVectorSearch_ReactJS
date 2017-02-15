@@ -4,32 +4,11 @@ body {
 
 .seleccionado
 {
-	background: #2ECC71;
-	padding: .5rem;
-	width: 20rem;
-	height: 10rem;
-	margin-top: 1rem;
-
-	line-height: 10rem;
-	color: white;
-	font-weight: bold;
-	font-size: 3em;
-	text-align: center;
 	background-color: #4da6ff;
 }
 
 .encontrado
 {
-	padding: .5rem;
-	width: 20rem;
-	height: 10rem;
-	margin-top: 1rem;
-
-	line-height: 10rem;
-	color: white;
-	font-weight: bold;
-	font-size: 3em;
-	text-align: center;
 	background-color: #cc33ff;
 }
 
@@ -47,26 +26,11 @@ body {
     display: inline-block;
     width: 50%;
     
-	div {
-		height: 100%;
-		width: 25%;
-		display: inline-block;
-		text-align: center;
-
-		background-color: #19B5FE;
-		border: .3rem solid #4B77BE;
-		line-height: 3rem;
-	}
 	input {
-		height: 3rem;
 		width: 40%;
 		margin-right: 5%; 
-		display: inline-block;
-		text-align: center;
+		display: block;
 		font-size: 1rem;
-	}
-	button {
-		display: inline-block;
 	}
 }
 
@@ -75,21 +39,6 @@ body {
 	position: absolute;
 	margin-top: 2rem;
 	height: 3rem;
-	button {
-	    position: relative;
-	    display: block;
-	    right: 0;
-	    bottom: 0;
-	    background-color: #4caf50;
-	    border: none;
-	    color: #fff;
-	    padding: 15px 32px;
-	    text-align: center;
-	    text-decoration: none;
-	    display: inline-block;
-	    font-size: 16px;
-	    width: 8rem;
-	}
 }
 
 .pr {
@@ -97,15 +46,11 @@ body {
 }
 
 .normal {
-	padding: .5rem;
-	width: 20rem;
-	height: 10rem;
-	margin-top: 1rem;
-
-	line-height: 10rem;
-	color: white;
-	font-weight: bold;
-	font-size: 3em;
-	text-align: center;
+	width: 4rem;
+	height: 4rem;
+	font-size: 20;
 	background-color: #ffb366;
+	text-align: center;
+	line-height: 4rem;
+	border-radius: 50%;
 }

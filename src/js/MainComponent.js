@@ -33,12 +33,13 @@ export default class MainComponent extends React.Component {
 		console.log("valor buscado:" + number);
 		console.log("lastChecked:" + lastChecked);
 		let half = Math.floor((start + end) / 2);
-	    let b = array[half];
+	    let b = array[half].props.children;
 	    console.log("half:" + half);
 	    console.log("b:" + b);
 	    let updatedArray = this.state.array;
 	    let activeElement = <div className="seleccionado" key={ half }>{ b }</div>;
 	    updatedArray[half] = activeElement;
+	    console.log(this.state);
 	    this.setState({array: updatedArray});
 
 	    if (number === b)
@@ -51,24 +52,25 @@ export default class MainComponent extends React.Component {
 	        return true;
 	    }
 
-	    if(number > b && half<array.length - 1 && half != lastChecked)
+	    if(number > b && half<array.length - 1)
 	    {
 	    	console.log("entra al segundo if");
 	    	let returnValue = {
 	        	start: (half+1),
 	        	end: end
 	        };
-	        return returnValue;
+	        console.log(`ret value${returnValue}`);
+	        this.setState({ values: returnValue });
 	    }
 
-	    if(number < b && half >= 0 && half != lastChecked)
+	    if(number < b && half >= 0)
 	    {
 	    	console.log("entra al tercer if");
 	    	let returnValue = {
 	        	start: start,
 	        	end: (half-1)
 	        };
-	        return returnValue;
+	        this.setState({ values: returnValue });
 	    }
 
 	    return false;
@@ -88,7 +90,7 @@ export default class MainComponent extends React.Component {
 					<div className="array-search-section">
 						<div className="pr">Find</div>
 						<input type="text" className="array-search-input pr" ref={ input => this.searchValue = input }/>
-						<button type="submit" onClick={ () => this.state.values = 
+						<button type="submit" onClick={ () =>
 							this.step(this.state.array, parseInt(this.searchValue.value), 0, 
 							this.state.values.start, this.state.values.end) }>Step</button>
 						<button type="submit" onClick={ () => this.refresh() }>Refresh</button>
