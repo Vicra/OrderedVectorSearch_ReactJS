@@ -30,12 +30,8 @@ export default class MainComponent extends React.Component {
 	}
 
 	step(array, number, lastChecked, start, end) {
-		console.log("valor buscado:" + number);
-		console.log("lastChecked:" + lastChecked);
 		let half = Math.floor((start + end) / 2);
 	    let b = array[half].props.children;
-	    console.log("half:" + half);
-	    console.log("b:" + b);
 	    let updatedArray = this.state.array;
 	    let activeElement = <div className="seleccionado" key={ half }>{ b }</div>;
 	    updatedArray[half] = activeElement;
@@ -43,7 +39,8 @@ export default class MainComponent extends React.Component {
 	    this.setState({array: updatedArray});
 		
 
-		console.log(number);console.log(b);
+		console.log("number:" + number);
+		console.log("b: " + b);
 	    if (number === b)
 	    {
 	    	console.log("entra al if");
@@ -61,6 +58,7 @@ export default class MainComponent extends React.Component {
 	        	start: (half+1),
 	        	end: end
 	        };
+
 	        console.log(`ret value${returnValue}`);
 	        this.setState({ values: returnValue });
 	    }
