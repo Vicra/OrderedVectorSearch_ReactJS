@@ -8,13 +8,17 @@ export default class MainComponent extends React.Component {
 
 	static defaultProps = {
         arrayLength: 6,
-        array : [1,5,6,8]
+        array : [<div className="normal">1</div>,
+    				<div className="normal">5</div>,
+    				<div className="normal">6</div>,
+    				<div className="normal">8</div>]
     };
 
 	constructor(props) {
 		super(props);
 
 		this.step = this.step.bind(this);
+		this.refresh = this.refresh.bind(this);
 
 		this.state = {
 			array : props.array,
@@ -70,6 +74,10 @@ export default class MainComponent extends React.Component {
 	    return false;
 	}
 
+	refresh(){
+		window.location.reload();
+	}
+
 	render() {
 		return (
 			<div>
@@ -83,6 +91,7 @@ export default class MainComponent extends React.Component {
 						<button type="submit" onClick={ () => this.state.values = 
 							this.step(this.state.array, parseInt(this.searchValue.value), 0, 
 							this.state.values.start, this.state.values.end) }>Step</button>
+						<button type="submit" onClick={ () => this.refresh() }>Refresh</button>
 					</div>
 				</div>
 			</div>

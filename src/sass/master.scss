@@ -15,12 +15,11 @@ body {
 	font-weight: bold;
 	font-size: 3em;
 	text-align: center;
-	background-color: green;
+	background-color: #4da6ff;
 }
 
 .encontrado
 {
-	background: #2ECC71;
 	padding: .5rem;
 	width: 20rem;
 	height: 10rem;
@@ -31,7 +30,7 @@ body {
 	font-weight: bold;
 	font-size: 3em;
 	text-align: center;
-	background-color: blue;
+	background-color: #cc33ff;
 }
 
 .array-container {
@@ -95,4 +94,18 @@ body {
 
 .pr {
 	position: relative;
+}
+
+.normal {
+	padding: .5rem;
+	width: 20rem;
+	height: 10rem;
+	margin-top: 1rem;
+
+	line-height: 10rem;
+	color: white;
+	font-weight: bold;
+	font-size: 3em;
+	text-align: center;
+	background-color: #ffb366;
 }
