@@ -41,7 +41,9 @@ export default class MainComponent extends React.Component {
 	    updatedArray[half] = activeElement;
 	    console.log(this.state);
 	    this.setState({array: updatedArray});
+		
 
+		console.log(number);console.log(b);
 	    if (number === b)
 	    {
 	    	console.log("entra al if");
