@@ -8,10 +8,18 @@ export default class MainComponent extends React.Component {
 
 	static defaultProps = {
         arrayLength: 6,
-        array : [<div className="normal">1</div>,
+        array : [
+        			<div className="normal">1</div>,
     				<div className="normal">5</div>,
     				<div className="normal">6</div>,
-    				<div className="normal">8</div>]
+    				<div className="normal">9</div>,
+    				<div className="normal">11</div>,
+    				<div className="normal">13</div>,
+    				<div className="normal">14</div>,
+    				<div className="normal">16</div>,
+    				<div className="normal">18</div>,
+    				<div className="normal">20</div>
+    			]
     };
 
 	constructor(props) {
@@ -35,15 +43,10 @@ export default class MainComponent extends React.Component {
 	    let updatedArray = this.state.array;
 	    let activeElement = <div className="seleccionado" key={ half }>{ b }</div>;
 	    updatedArray[half] = activeElement;
-	    console.log(this.state);
-	    this.setState({array: updatedArray});
-		
 
-		console.log("number:" + number);
-		console.log("b: " + b);
-	    if (number === b)
+	    this.setState({array: updatedArray});
+	    if (number == b)
 	    {
-	    	console.log("entra al if");
 		    let updatedArray = this.state.array;
 		    let activeElement = <div className="encontrado" key={ half }>{ b }</div>;
 		    updatedArray[half] = activeElement;
@@ -53,19 +56,15 @@ export default class MainComponent extends React.Component {
 
 	    if(number > b && half<array.length - 1)
 	    {
-	    	console.log("entra al segundo if");
 	    	let returnValue = {
 	        	start: (half+1),
 	        	end: end
 	        };
-
-	        console.log(`ret value${returnValue}`);
 	        this.setState({ values: returnValue });
 	    }
 
 	    if(number < b && half >= 0)
 	    {
-	    	console.log("entra al tercer if");
 	    	let returnValue = {
 	        	start: start,
 	        	end: (half-1)
@@ -86,6 +85,26 @@ export default class MainComponent extends React.Component {
 				<div className = "array-container">
 					{ this.state.array }
 				</div>
+				<br></br>
+				<br></br>
+				<table>
+					<tr>
+						<th>Color</th><th>Significado</th>
+					</tr>
+					<tr>
+						<td><div className="seleccionado-min"></div></td>
+						<td>Medio</td>
+					</tr>
+					<tr>
+						<td><div className="encontrado-min"></div></td>
+						<td>Encontrado</td>
+					</tr>
+					<tr>
+						<td><div className="normal-min"></div></td>
+						<td>Demas Nodos</td>
+					</tr>
+				</table>
+				<br></br>
 				<div className="array-form">
 					<div className="array-search-section">
 						<div className="pr">Find</div>
