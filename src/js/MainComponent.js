@@ -4,7 +4,7 @@ export default class MainComponent extends React.Component {
 	static propTypes = {
 		arrayLength: React.PropTypes.number,
 		array: React.PropTypes.array
-	};
+	}; 
 
 	static defaultProps = {
         arrayLength: 6,
